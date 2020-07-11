@@ -1,0 +1,19 @@
+<div class="jumbotron">
+    <main>
+        <h1><span>{{rec.label}}</span></h1> <br>
+        <h2>Duration: {{rec.totalTime}} mins</h2> 
+        <h2>Calories: {{rec.calories}} kcal</h2>
+        <h2>Health Lables: {{rec.healthLabels}}</h2>
+        <br>
+        <div class="d-flex justify-content-center">
+            <ul>
+                <li *ngFor="let i of rec.ingredients">{{i.text}} ({{i.weight}} g)</li>
+            </ul>
+            <br>
+        </div>
+        <img src={{rec.image}}>
+            <button class="btn striped-shadow dark"><span><a style="text-decoration: none;color: black;" href={{rec.url}}>Let's cook!</a></span></button>
+            <br> 
+            <h2> Share this recipe <a href ={{rec.shareAs}}>here</a></h2>
+    </main>
+</div>

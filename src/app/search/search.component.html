@@ -1,0 +1,9 @@
+<div class="search">
+<form [formGroup]="searchForm" class="form" (submit)="getResults()">
+      <div class="container">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <input id="searchBar" formControlName="query" class="form-control searchbar" type="text" placeholder="Search for a recipe">
+        <button type="submit" id="btnSearch" class="btn-search"><i class="fa fa-search"></i></button>
+      </div>
+</form>
+</div>

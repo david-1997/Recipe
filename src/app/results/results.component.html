@@ -1,0 +1,22 @@
+<!--font awesome-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<!-- google fonts-->
+<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+<body>
+    <div *ngIf="!flag">
+        <img src="/assets/sad.jpg" style="width: 150px; height: 300px;"> <br> <br>
+        <p>No results found!</p>
+    </div>
+    <div *ngFor="let recipe of recipes" class="row">
+        <a id="card-wrapper" [routerLink]="['/recipe',recipe.recipe.uri]" class="col-lg-4 col-sm-4" style="background-image: url({{recipe.recipe.image}});">
+            <div class="inner-card">
+                <!--title-->
+                <div id="title">
+                    <header>{{recipe.recipe.label}}</header>
+                </div>
+                <!--details-->
+            </div>
+        </a>
+    </div>
+</body>

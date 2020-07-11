@@ -1,0 +1,237 @@
+$text-width: 70%;
+    
+    @import url('https://fonts.googleapis.com/css?family=Allura|Rubik+Mono+One');
+    
+    @mixin slanty {
+      clip-path: polygon(
+        0 10%, /* left top */
+        100% 0%, /* right top */ 
+        100% 90%, /* right bottom */
+        0 100% /* left bottom */
+      );
+    } 
+    
+    body {
+      background: hsl(37°, 90%, 97%);
+    }
+    
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+       display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: georgia;
+      line-height: 1.6;
+    }
+    
+    h1 {
+      font-size: 1rem;
+      font-family: 'Rubik Mono One', sans-serif;
+      margin: 0;
+      position: relative;
+    }
+    h1 span {
+      font-family: 'Allura', cursive;
+      font-weight: normal;
+      font-size: 200%;
+      color: teal;
+    }
+    
+    h1:nth-of-type(2):before {
+      content: "*";
+      position: absolute;
+      left: -3rem;
+      top: 1rem;;
+      font-family: Georgia;
+      font-size: 200%;
+    }
+    
+    h2 {
+      margin: 0;
+      font-style: italic;
+      font-weight: normal;
+      font-size: 1.2rem;
+    }
+    
+    li {
+      font-weight: bold;
+      list-style: none;
+    }
+    
+    p {
+      width: $text-width;
+      font-size: 1.3rem;
+    }
+    
+    
+    figure {
+      position: relative;
+      margin: 3rem 0 0;
+      width: 100%;
+      transform: translateX(-2.5%);
+    }
+    
+    figure img {
+         position: relative;
+         z-index: 2;
+         max-width: 100%;
+         filter: grayscale(100%);  
+         @include slanty;
+    }
+    
+    figure::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: -50px; left: 0; bottom: 50px; right: -50px;
+      background: teal;
+      @include slanty;
+    }
+    
+    
+    @media screen and (min-width:900px) {
+      
+      h1 {font-size: 2rem;}
+      
+      ul {
+        column-gap: 50px;
+        width: $text-width;
+      }
+      
+      ul.four-col {column-count: 4;}
+      
+      figure {width: 90%;}
+    }
+    
+    button {
+      overflow: visible;
+      border: 0;
+      padding: 0;
+      margin: 1.8rem;
+    }
+    .btn.striped-shadow span {
+      display: block;
+      position: relative;
+      z-index: 2;
+      border: 5px solid;
+    }
+    .btn.striped-shadow.white span {
+      border-color: #fff;
+      color: #fff;
+      background: #77bfa1;
+    }
+    
+    .btn.striped-shadow.blue span {
+      border-color: #4183D7;
+      background: #77bfa1;
+      color: #4183D7;
+    }
+    .btn.striped-shadow.dark span {
+      border-color: #393939;
+      background: #77bfa1;
+      color: #393939;
+    }
+    
+    .btn {
+      font-family: 'Bungee Shade', sans-serif;
+      height: 80px;
+      line-height: 65px;
+      display: inline-block;
+      letter-spacing: 1px;
+      position: relative;
+      font-size: 1.35rem;
+      transition: opacity .3s, z-index .3s step-end, -webkit-transform .3s;
+      transition: opacity .3s, z-index .3s step-end, transform .3s;
+      transition: opacity .3s,
+        z-index .3s step-end,
+        transform .3s,
+        -webkit-transform .3s;
+      z-index: 1;
+      background-color: transparent;
+      cursor: pointer;
+    }
+    
+    .btn {
+      width: 155px;
+      height: 48px;
+      line-height: 38px;
+    }
+    
+    button.btn.striped-shadow.white:after, button.btn.striped-shadow.white:before {
+      background-image: linear-gradient(
+        135deg,
+        transparent 0,
+        transparent 5px,
+        #fff 5px,
+        #fff 10px,
+        transparent 10px
+      );
+    }
+    
+    button.btn.striped-shadow.blue:after, button.btn.striped-shadow.blue:before {
+      background-image: linear-gradient(
+        135deg,
+        transparent 0,
+        transparent 5px,
+        #4183D7 5px,
+        #4183D7 10px,
+        transparent 10px
+      );
+    }
+    
+    button.btn.striped-shadow.dark:after, button.btn.striped-shadow.dark:before {
+      background-image: linear-gradient(
+        135deg,
+        transparent 0,
+        transparent 5px,
+        #393939 5px,
+        #393939 10px,
+        transparent 10px
+      );
+    }
+    
+    button.btn.striped-shadow:hover:before {
+      max-height: calc(100% - 10px);
+    }
+    
+    button.btn.striped-shadow:after {
+      width: calc(100% - 4px);
+      height: 8px;
+      left: -10px;
+      bottom: -9px;
+      background-size: 15px 8px;
+      background-repeat: repeat-x;
+    }
+    button.btn.striped-shadow:after, button.btn.striped-shadow:before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 1;
+      transition: max-height .3s, width .3s, -webkit-transform .3s;
+      transition: transform .3s, max-height .3s, width .3s;
+      transition: transform .3s, max-height .3s, width .3s, -webkit-transform .3s;
+    }
+    
+    .btn.striped-shadow:hover {
+      -webkit-transform: translate(-12px, 12px);
+      -ms-transform: translate(-12px, 12px);
+      transform: translate(-12px, 12px);
+      z-index: 3;
+    }
+    
+    button.btn.striped-shadow:hover:after, button.btn.striped-shadow:hover:before {
+      -webkit-transform: translate(12px, -12px);
+      -ms-transform: translate(12px, -12px);
+      transform: translate(12px, -12px);
+    }
+    button.btn.striped-shadow:before {
+      width: 8px;
+      max-height: calc(100% - 5px);
+      height: 100%;
+      left: -12px;
+      bottom: -5px;
+      background-size: 8px 15px;
+      background-repeat: repeat-y;
+      background-position: 0 100%;
+    }
