@@ -13,7 +13,6 @@ export class ResultsComponent implements OnInit {
   query;
   recipes;
   flag=true;
-  flag1=true;
   constructor(private route: ActivatedRoute,private router: Router,private recipe:RecipeService) {
     this.sub = this.route
       .queryParams
@@ -25,10 +24,6 @@ export class ResultsComponent implements OnInit {
       console.log(data);
       this.recipes=data.hits;
       if(this.recipes.length==0)
-      {
-        this.flag=false;
-      }
-      else
       {
         this.flag=false;
       }
