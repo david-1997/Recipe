@@ -48,13 +48,12 @@
   
   #title{
     font-size:30px;
-    margin-top:220px;
+    margin-top:auto;
     /* height: 150px; */
     overflow: auto;
     background-color: white;
     opacity: 0.5;
     text-align: center;
-    margin-bottom: 220px;
   }
   
   #details{

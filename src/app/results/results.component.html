@@ -8,6 +8,10 @@
         <img src="/assets/sad.jpg" style="width: 150px; height: 300px;"> <br> <br>
         <p>No results found!</p>
     </div>
+    <div *ngIf="flag1">
+        <img src="/assets/happy.jpg" style="width: 150px; height: 300px;"> <br> <br>
+        <p>Loading... please wait!!</p>
+    </div>
     <div *ngFor="let recipe of recipes" class="row">
         <a id="card-wrapper" [routerLink]="['/recipe',recipe.recipe.uri]" class="col-lg-4 col-sm-4" style="background-image: url({{recipe.recipe.image}});">
             <div class="inner-card">
