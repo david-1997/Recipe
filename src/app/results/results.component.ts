@@ -30,7 +30,7 @@ export class ResultsComponent implements OnInit {
       }
       else
       {
-        this.flag1=false;
+        this.flag=false;
       }
      })
    }
